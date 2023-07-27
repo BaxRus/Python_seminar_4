@@ -12,18 +12,36 @@
 # 9
 
 
-berries = []
-n = int(input("Введите колличество кустов "))
-for i in range(n):
-    berries.append(int(input(f"Куст {i+1}, кол-во ягод: ")))
+# berries = []
+# n = int(input("Введите колличество кустов "))
+# for i in range(n):
+#     berries.append(int(input(f"Куст {i+1}, кол-во ягод: ")))
 
-max_sum = 0
+# max_sum = 0
 
-for i in range(n):
-    sum = berries[i]
-    left = (i-1) % n
-    right = (i+1) % n
-    sum += berries[left] + berries[right] 
-    max_sum = max(max_sum, sum)
+# for i in range(n):
+#     sum = berries[i]
+#     left = (i-1) % n
+#     right = (i+1) % n
+#     sum += berries[left] + berries[right] 
+#     max_sum = max(max_sum, sum)
 
-print(max_sum)
+# print(max_sum)
+
+# Даны два неупорядоченных набора целых чисел (может быть, с повторениями). 
+# Выдать без повторений в порядке возрастания все те числа, которые встречаются в обоих наборах.
+# Пользователь вводит 2 числа. n — кол-во элементов первого множества. m — кол-во элементов второго множества.
+# Затем пользователь вводит сами элементы множеств.
+# 11 6
+# 2 4 6 8 10 12 10 8 6 4 2
+# 3 6 9 12 15 18
+# 6 12
+
+n = int(input("Введите кол-во элементов первого множества "))
+m = int(input("Введите кол-во элементов второго множества "))
+numbers_n = set(list(map(int, input(f"Множество {n} элементов, через пробел > ").split())))
+numbers_m = set(list(map(int, input(f"Множество {m} элементов, через пробел ").split())))
+
+for i in numbers_n:
+    if i in numbers_m:
+        print (i)
